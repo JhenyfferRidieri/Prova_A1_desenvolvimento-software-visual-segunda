@@ -115,3 +115,4 @@ C:\Users\Jhenyffer\Desktop\ProvaA1\Prova_A1\api_avaliacao\obj\Debug\net8.0\refin
 C:\Users\Jhenyffer\Desktop\ProvaA1\Prova_A1\api_avaliacao\obj\Debug\net8.0\api_avaliacao.pdb
 C:\Users\Jhenyffer\Desktop\ProvaA1\Prova_A1\api_avaliacao\obj\Debug\net8.0\api_avaliacao.genruntimeconfig.cache
 C:\Users\Jhenyffer\Desktop\ProvaA1\Prova_A1\api_avaliacao\obj\Debug\net8.0\ref\api_avaliacao.dll
+C:\Users\Jhenyffer\Desktop\ProvaA1\Prova_A1\api_avaliacao\obj\Debug\net8.0\api_avaliacao.sourcelink.json

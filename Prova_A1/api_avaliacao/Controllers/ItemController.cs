@@ -35,4 +35,14 @@ public class ItemController : ControllerBase
         return Ok(_itemRepository.Listar());
     }
 
+    [HttpGet("{id}")]
+    public IActionResult BuscarPorId(int id)
+    {
+        var item = _itemRepository.BuscarPorId(id);
+        if (item == null)
+            return NotFound(new { mensagem = "Item não encontrado." });
+
+        return Ok(item);
+    }
+
 }

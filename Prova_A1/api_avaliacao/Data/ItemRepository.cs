@@ -20,4 +20,11 @@ public class ItemRepository : IItemRepository
     {
         return _context.Itens.ToList();
     }
+
+    public Item? BuscarPorId(int id)
+    {
+        return _context.Itens
+            .Include(i => i.Categoria)
+            .FirstOrDefault(i => i.ItemId == id);
+    }
 }

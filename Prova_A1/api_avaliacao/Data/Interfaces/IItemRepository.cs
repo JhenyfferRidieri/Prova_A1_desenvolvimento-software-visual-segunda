@@ -7,5 +7,6 @@ public interface IItemRepository
 {
     void Cadastrar(Item Item);
     List<Item> Listar();
+    Item? BuscarPorId(int id);
 
 };

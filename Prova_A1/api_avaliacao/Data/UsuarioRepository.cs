@@ -33,4 +33,10 @@ public class UsuarioRepository : IUsuarioRepository
     {
         return _context.Usuarios.ToList();
     }
+
+    public Usuario? BuscarUsuarioPorEmail(string email)
+    {
+        return _context.Usuarios.FirstOrDefault(x => x.Email == email);
+    }
+
 }

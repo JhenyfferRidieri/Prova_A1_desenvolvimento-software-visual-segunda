@@ -1,7 +1,15 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\Prova_A1",
+    "\\Prova_A1\\api_avaliacao",
+    "\\Prova_A1\\api_avaliacao\\Controllers",
+    "\\Prova_A1\\api_avaliacao\\Data",
+    "\\Prova_A1\\api_avaliacao\\Data\\Interfaces",
+    "\\Prova_A1\\api_avaliacao\\Models",
+    "\\Prova_A1\\api_avaliacao\\Properties",
+    "\\Prova_A1\\api_avaliacao\\Tests"
   ],
-  "SelectedNode": "\\Prova_A1",
+  "SelectedNode": "\\Prova_A1\\api_avaliacao\\Tests\\usuario.http",
   "PreviewInSolutionExplorer": false
 }
