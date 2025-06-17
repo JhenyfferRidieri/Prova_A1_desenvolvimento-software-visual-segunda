@@ -1,4 +1,5 @@
 using api_avaliacao.Data.Interfaces;
+using Microsoft.EntityFrameworkCore;
 using api_avaliacao.Models;
 
 namespace api_avaliacao.Data;

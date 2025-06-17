@@ -4,7 +4,9 @@ import { useEffect, useState } from 'react';
 import api from '../services/api';
 import { Item } from '../types/interfaces';
 import ItemCard from '../Components/ItemCard';
+import NavigationButtons from '../Components/NavigationButtons';
 import { useRouter } from 'next/navigation';
+import { getToken } from '../utils/auth';
 
 export default function HomePage() {
   const [itens, setItens] = useState<Item[]>([]);
@@ -12,6 +14,13 @@ export default function HomePage() {
   const router = useRouter();
 
   useEffect(() => {
+    const token = getToken();
+
+    if (!token) {
+      router.push('/login');
+      return;
+    }
+
     async function fetchItens() {
       try {
         const response = await api.get('/api/item/listar');
@@ -30,6 +39,8 @@ export default function HomePage() {
 
   return (
     <div style={{ maxWidth: 800, margin: '0 auto', padding: '20px' }}>
+      <NavigationButtons />
+
       <h2>Lista de Itens</h2>
 
       {error && <p style={{ color: 'red' }}>{error}</p>}

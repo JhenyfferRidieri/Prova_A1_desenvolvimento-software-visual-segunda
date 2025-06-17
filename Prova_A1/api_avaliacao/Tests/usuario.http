@@ -5,8 +5,8 @@ POST {{url_base}}/cadastrar
 Content-Type: application/json
 
 {
-    "email" : "adm",
-    "senha" : "123"
+    "email" : "adm@gmail.com",
+    "senha" : "123@teste"
 }
 
 ### Login
@@ -14,8 +14,8 @@ POST {{url_base}}/login
 Content-Type: application/json
 
 {
-    "email" : "adm",
-    "senha" : "123"
+  "email": "adm@gmail.com",
+  "senha": "123@teste"
 }
 
 ### Listar usuários

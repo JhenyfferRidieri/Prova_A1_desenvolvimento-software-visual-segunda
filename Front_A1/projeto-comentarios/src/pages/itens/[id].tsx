@@ -6,25 +6,29 @@ import api from '../../services/api';
 import { Item, Comentario } from '../../types/interfaces';
 import ComentarioList from '../../Components/ComentarioList';
 import ComentarioForm from '../../Components/ComentarioForm';
+import NavigationButtons from '../../Components/NavigationButtons';
 
 export default function ItemDetailsPage() {
-  const params = useParams();
+  const params = useParams<{ id: string }>();
   const router = useRouter();
 
   const [item, setItem] = useState<Item | null>(null);
   const [comentarios, setComentarios] = useState<Comentario[]>([]);
   const [error, setError] = useState('');
+  const itemId = params?.id;
 
-  const itemId = params.id;
+  if (!itemId) {
+    return <p>Item inválido.</p>;
+  }
 
   useEffect(() => {
     async function fetchData() {
       try {
-        // os detalhes do item
+        // detalhes do item
         const itemResponse = await api.get(`/api/item/${itemId}`);
         setItem(itemResponse.data);
 
-        // os comentários
+        // comentários do item
         const comentariosResponse = await api.get(`/api/comentario/listar/${itemId}`);
         setComentarios(comentariosResponse.data);
       } catch (err: any) {
@@ -40,7 +44,7 @@ export default function ItemDetailsPage() {
   }, [itemId, router]);
 
   const handleComentarioEnviado = () => {
-    // Recarrega comentários após novo comentário
+    // comentários após envio
     api.get(`/api/comentario/listar/${itemId}`)
       .then(res => setComentarios(res.data));
   };
@@ -50,6 +54,8 @@ export default function ItemDetailsPage() {
 
   return (
     <div style={{ maxWidth: 800, margin: '0 auto', padding: '20px' }}>
+      <NavigationButtons />
+
       <h2>{item.nome}</h2>
       <p>Categoria: {item.categoria?.nome}</p>
 
